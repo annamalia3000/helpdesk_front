@@ -21,8 +21,9 @@ body {
     align-items: center;
     padding: 20px;
     position: relative;
-    background: url('../img/paper.jpg');
-    border-top: 22px solid rgba(117, 115, 99, 0.48);
+    background: url('../img/back-paper.png');
+    background-size: contain;
+    border-top: 22px solid rgb(192, 191, 189);
     border-radius: 10px;
 }
 
@@ -33,22 +34,25 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+    min-height: 200px;
     text-align: center;
 }
 
-.add-btn {
-    width: 140px;
+.ticket-button {
     height: 40px;
+    padding: 0 15px;
     background: white;
     border: 1px solid black;
     border-radius: 5px;
 
+    float: Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.add-btn {
     position: absolute;
     top: 0; 
     right: 0;
-
-    font-family: Helvetica, sans-serif;
-    font-weight: 500;
 }
 
 .tickets_list {
@@ -84,18 +88,24 @@ body {
     margin-right: 15px;
 }
 
-.ticket-desc-short {
+.ticket__desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket__desc__short {
     flex-grow: 1;
     font-family: Helvetica, sans-serif;
     font-weight: 500;
     width: 350px;
     display: inline-block;
     margin-right: 20px;
-
 }
 
-.ticket-desc-full {
+.ticket__desc__full {
     display: none;
+    margin-top: 10px;
+    line-height: 1.2rem;
 }
 
 .data {
@@ -111,7 +121,6 @@ body {
     height: 1.5rem;
     background: white;
     margin-right: 20px;
-
 }
 
 .delete-btn {
@@ -124,4 +133,57 @@ body {
     margin-right: 10px;
     font-size: 1rem;
     color: black;
+}
+
+.popup-add-ticket {
+    display: none;
+    box-sizing: border-box;
+    width: 500px;
+    height: 100%;
+    position: absolute;
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 30px;
+
+    text-align: center;
+}
+
+.popup-add-ticket__title {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.popup-add-ticket__field {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.desk-field {
+    margin-top: 10px;
+    display: block;
+}
+
+.desk-field__short {
+    resize: none;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.desk-field__full {
+    resize: none;
+    min-height: 50px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.popup-add-ticket__buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
 }

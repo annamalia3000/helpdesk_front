@@ -5,7 +5,7 @@ tickets.addEventListener('click', (e) => {
 
     if (button) {
         const ticket = button.closest('.ticket');
-        const fullDescription = ticket.querySelector('.ticket-desc-full');
+        const fullDescription = ticket.querySelector('.ticket__desc__full');
         if (button.querySelector('.fa-check')) {
             button.innerHTML = '';
             fullDescription.style.display = 'none';
@@ -14,4 +14,17 @@ tickets.addEventListener('click', (e) => {
             fullDescription.style.display = 'block';
         }
     }
+});
+
+const addButton = document.querySelector('.add-btn');
+const popupAddTicket = document.querySelector('.popup-add-ticket');
+
+addButton.addEventListener('click', () => {
+    popupAddTicket.style.display = 'block';
+});
+
+const popupCancelButton = document.querySelector('.popup-btn__cancel');
+
+popupCancelButton.addEventListener('click', () => {
+    popupAddTicket.style.display = 'none';
 });
