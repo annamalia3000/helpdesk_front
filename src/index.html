@@ -50,24 +50,57 @@
         </div>
       </div>
     </div>
-    <div class="popup-add-ticket">
-      <h3 class="popup-add-ticket__title">Добавить тикет</h3>
-      <div class="popup-add-ticket__field">
+    <div class="popup popup-add-ticket">
+      <h3 class="popup__title">Добавить тикет</h3>
+      <div class="popup__field">
         <label class="desk-field">
           Краткое описание
           <textarea class="desk-field__short"></textarea>
         </label>
       </div>
-      <div class="popup-add-ticket__field">
+      <div class="popup__field">
         <label class="desk-field">
           Подробное описание
           <textarea class="desk-field__full"></textarea>
         </label>
       </div>
-      <div class="popup-add-ticket__buttons">
-        <button type="submit" class="ticket-button popup-btn__cancel">Отмена</button>
-        <button type="submit" class="ticket-button popup-btn-ok">OK</button>
+      <div class="popup__buttons">
+        <button type="submit" class="ticket-button popup-add-ticket__btn-cancel">Отмена</button>
+        <button type="submit" class="ticket-button popup-add-ticket__btn-ok">OK</button>
       </div>
+    </div>
+    <div class="popup popup-edit-ticket">
+      <h3 class="popup__title">Изменить тикет</h3>
+      <div class="popup__field">
+        <label class="desk-field">
+          Краткое описание
+          <textarea class="desk-field__short"></textarea>
+        </label>
+      </div>
+      <div class="popup__field">
+        <label class="desk-field">
+          Подробное описание
+          <textarea class="desk-field__full"></textarea>
+        </label>
+      </div>
+      <div class="popup__buttons">
+        <button type="submit" class="ticket-button popup-edit-ticket__btn-cancel">Отмена</button>
+        <button type="submit" class="ticket-button popup-edit-ticket-btn-ok">OK</button>
+      </div>
+      
+  
+    </div>
+    <div class="popup popup-delete-ticket">
+      <h3 class="popup__title">Удалить тикет</h3>
+      <div class="popup-delete-ticket__desc">
+        Вы уверены, что хотите удалить тикет? Это <br>
+        действие необратимо.
+      </div>
+      <div class="popup__buttons">
+        <button type="submit" class="ticket-button popup-edit-ticket__btn-cancel">Отмена</button>
+        <button type="submit" class="ticket-button popup-edit-ticket-btn-ok">OK</button>
+      </div>
+      
   
     </div>
   </div>

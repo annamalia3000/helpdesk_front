@@ -1,30 +1,40 @@
 const tickets = document.querySelector('.tickets_list');
-
+// Полное описание - показать и скрыть
 tickets.addEventListener('click', (e) => {
-    const button = e.target.closest('.check-btn');
+    const checkButton = e.target.closest('.check-btn');
 
-    if (button) {
-        const ticket = button.closest('.ticket');
+    if (checkButton) {
+        const ticket = checkButton.closest('.ticket');
         const fullDescription = ticket.querySelector('.ticket__desc__full');
-        if (button.querySelector('.fa-check')) {
-            button.innerHTML = '';
+        if (checkButton.querySelector('.fa-check')) {
+            checkButton.innerHTML = '';
             fullDescription.style.display = 'none';
         } else {
-            button.innerHTML = '<i class="fa-solid fa-check"></i>'; 
+            checkButton.innerHTML = '<i class="fa-solid fa-check"></i>'; 
             fullDescription.style.display = 'block';
         }
     }
 });
-
+//Добавить тикет - показать
 const addButton = document.querySelector('.add-btn');
 const popupAddTicket = document.querySelector('.popup-add-ticket');
 
 addButton.addEventListener('click', () => {
     popupAddTicket.style.display = 'block';
 });
-
-const popupCancelButton = document.querySelector('.popup-btn__cancel');
+//Добавить тикет - скрыть
+const popupCancelButton = document.querySelector('.popup-add-ticket__btn-cancel');
 
 popupCancelButton.addEventListener('click', () => {
     popupAddTicket.style.display = 'none';
+});
+
+//Исправить тикет -  показать
+const popupEditTicket = document.querySelector('.popup-edit-ticket');
+tickets.addEventListener('click', (e) => {
+    const editButton = e.target.closest('.edit-btn');
+
+    if (editButton) {
+        popupEditTicket.style.display = 'none';
+    }
 });
