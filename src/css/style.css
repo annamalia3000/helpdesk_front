@@ -55,7 +55,7 @@ body {
     right: 0;
 }
 
-.tickets_list {
+.tickets-list {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -63,7 +63,7 @@ body {
     margin-bottom: 30px;
 }
 
-.ticket {
+.ticket-item {
     box-sizing: border-box;
     border: 1px solid black;
     background: white;
@@ -88,12 +88,12 @@ body {
     margin-right: 15px;
 }
 
-.ticket__desc {
+.ticket-info {
     display: flex;
     flex-direction: column;
 }
 
-.ticket__desc__short {
+.ticket-summary {
     flex-grow: 1;
     font-family: Helvetica, sans-serif;
     font-weight: 500;
@@ -102,7 +102,7 @@ body {
     margin-right: 20px;
 }
 
-.ticket__desc__full {
+.ticket-details {
     display: none;
     margin-top: 10px;
     line-height: 1.2rem;
@@ -150,58 +150,58 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.popup-add-ticket {
+.popup-add {
     display: none;
 }
 
-.popup__title {
+.popup-title {
     padding: 0;
     margin: 0;
     font-size: 1rem;
     font-weight: 500;
 }
 
-.popup__field {
+.popup-field {
     font-size: 1rem;
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-.desk-field {
+.field-label {
     margin-top: 10px;
     display: block;
 }
 
-.desk-field__short {
+.short-input {
     resize: none;
     width: 100%;
     margin-top: 10px;
 }
 
-.desk-field__full {
+.full-input {
     resize: none;
     min-height: 50px;
     width: 100%;
     margin-top: 10px;
 }
 
-.popup__buttons {
+.popup-buttons {
     margin-top: 10px;
     display: flex;
     gap: 10px;
     justify-content: flex-end;
 }
 
-.popup-edit-ticket {
+.popup-edit {
     display: none;
 }
 
-.popup-delete-ticket {
-    display: block;
+.popup-delete {
+    display: none;
 }
 
-.popup-delete-ticket__desc {
+.popup-delete-desc {
     margin: 25px 0;
     text-align: left;
 }

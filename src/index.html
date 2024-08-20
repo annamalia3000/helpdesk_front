@@ -13,32 +13,32 @@
   <div class="container">
     <div class="tickets-widget">
       <button class="ticket-button add-btn">Добавить тикет</button>
-      <div class="tickets_list">
-        <div class="ticket">
+      <div class="tickets-list">
+        <div class="ticket-item">
           <button class="check-btn"></button>
-          <div class="ticket__desc">
-            <div class="ticket__desc__short">Поменять краску в принтере, ком. 404</div>
-            <div class="ticket__desc__full">Дополнительная информация</div>
+          <div class="ticket-info">
+            <div class="ticket-summary">Поменять краску в принтере, ком. 404</div>
+            <div class="ticket-details">Дополнительная информация</div>
           </div>
           <div class="data">10.03.19 08:40</div>
           <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
           <button class="delete-btn">X</button>
         </div>
-        <div class="ticket">
+        <div class="ticket-item">
           <button class="check-btn"></button>
-          <div class="ticket__desc">
-            <div class="ticket__desc__short">Переустановить Windows</div>
-            <div class="ticket__desc__full">Дополнительная информация</div>
+          <div class="ticket-info">
+            <div class="ticket-summary">Переустановить Windows</div>
+            <div class="ticket-details">Дополнительная информация</div>
           </div>
           <div class="data">15.03.19 12:35</div>
           <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
           <button class="delete-btn">X</button>
         </div>
-        <div class="ticket">
+        <div class="ticket-item">
           <button class="check-btn"></button>
-          <div class="ticket__desc">
-            <div class="ticket__desc__short">Установить обновление КВ-ХХХ</div>
-            <div class="ticket__desc__full">
+          <div class="ticketinfo">
+            <div class="ticket-summary">Установить обновление КВ-ХХХ</div>
+            <div class="ticket-details">
               Вышло критическое обновление для Windows, нужно поставить обновления в следующем приоритете: <br>
               1. Сервера (не забыть сделать бэкап!) <br>
               2. Рабочие станции
@@ -50,58 +50,56 @@
         </div>
       </div>
     </div>
-    <div class="popup popup-add-ticket">
-      <h3 class="popup__title">Добавить тикет</h3>
-      <div class="popup__field">
-        <label class="desk-field">
+    <div class="popup popup-add">
+      <h3 class="popup-title">Добавить тикет</h3>
+      <div class="popup-field">
+        <label class="field-label">
           Краткое описание
-          <textarea class="desk-field__short"></textarea>
+          <textarea class="field-input short-input"></textarea>
         </label>
       </div>
-      <div class="popup__field">
-        <label class="desk-field">
+      <div class="popup-field">
+        <label class="field-label">
           Подробное описание
-          <textarea class="desk-field__full"></textarea>
+          <textarea class="field-input full-input"></textarea>
         </label>
       </div>
-      <div class="popup__buttons">
-        <button type="submit" class="ticket-button popup-add-ticket__btn-cancel">Отмена</button>
-        <button type="submit" class="ticket-button popup-add-ticket__btn-ok">OK</button>
+      <div class="popup-buttons">
+        <button type="button" class="ticket-button popup-add-btn-cancel">Отмена</button>
+        <button type="button" class="ticket-button popup-add-btn-ok">OK</button>
       </div>
     </div>
-    <div class="popup popup-edit-ticket">
-      <h3 class="popup__title">Изменить тикет</h3>
-      <div class="popup__field">
-        <label class="desk-field">
+    <div class="popup popup-edit">
+      <h3 class="popup-title">Изменить тикет</h3>
+      <div class="popup-field">
+        <label class="field-label">
           Краткое описание
-          <textarea class="desk-field__short"></textarea>
+          <textarea class="field-input short-input"></textarea>
         </label>
       </div>
-      <div class="popup__field">
-        <label class="desk-field">
+      <div class="popup-field">
+        <label class="field-label">
           Подробное описание
-          <textarea class="desk-field__full"></textarea>
+          <textarea class="field-input full-input"></textarea>
         </label>
       </div>
-      <div class="popup__buttons">
-        <button type="submit" class="ticket-button popup-edit-ticket__btn-cancel">Отмена</button>
-        <button type="submit" class="ticket-button popup-edit-ticket-btn-ok">OK</button>
+      <div class="popup-buttons">
+        <button type="button" class="ticket-button popup-edit-btn-cancel">Отмена</button>
+        <button type="button" class="ticket-button popup-edit-btn-ok">OK</button>
       </div>
       
   
     </div>
-    <div class="popup popup-delete-ticket">
-      <h3 class="popup__title">Удалить тикет</h3>
-      <div class="popup-delete-ticket__desc">
+    <div class="popup popup-delete">
+      <h3 class="popup-title">Удалить тикет</h3>
+      <div class="popup-delete-desc">
         Вы уверены, что хотите удалить тикет? Это <br>
         действие необратимо.
       </div>
-      <div class="popup__buttons">
-        <button type="submit" class="ticket-button popup-edit-ticket__btn-cancel">Отмена</button>
-        <button type="submit" class="ticket-button popup-edit-ticket-btn-ok">OK</button>
+      <div class="popup-buttons">
+        <button type="button" class="ticket-button popup-edit-btn-cancel">Отмена</button>
+        <button type="button" class="ticket-button popup-edit-btn-ok">OK</button>
       </div>
-      
-  
     </div>
   </div>
 
