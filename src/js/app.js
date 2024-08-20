@@ -35,6 +35,32 @@ tickets.addEventListener('click', (e) => {
     const editButton = e.target.closest('.edit-btn');
 
     if (editButton) {
-        popupEditTicket.style.display = 'none';
+        popupEditTicket.style.display = 'block';
     }
+});
+//удалить тикет
+const popupDelTicket = document.querySelector('.popup-delete');
+const cancelDelBtn = document.querySelector('.popup-delete-btn-cancel');
+const okDelBtn = document.querySelector('.popup-delete-btn-ok');
+let itemToRemove = null;
+
+tickets.addEventListener('click', (e) => {
+    const deleteButton = e.target.closest('.delete-btn');
+
+    if (deleteButton) {
+        itemToRemove = e.target.closest('.ticket-item');
+        popupDelTicket.style.display = 'block';
+    }
+});
+
+cancelDelBtn.addEventListener('click', () => {
+    popupDelTicket.style.display = 'none';
+    itemToRemove = null;
+});
+
+okDelBtn.addEventListener('click', () => {
+    itemToRemove .remove();
+    itemToRemove = null;
+    popupDelTicket.style.display = 'none';
+
 });
