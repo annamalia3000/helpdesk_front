@@ -53,6 +53,7 @@ body {
     position: absolute;
     top: 0; 
     right: 0;
+    cursor: pointer;
 }
 
 .tickets-list {
@@ -75,6 +76,10 @@ body {
     margin: 0;
     text-align: left;
     justify-content: space-between;
+}
+
+.ticket-item:nth-child(n+2) {
+    border-top: none;
 }
 
 .check-btn {
@@ -109,24 +114,27 @@ body {
     line-height: 1.2rem;
 }
 
-.data {
+.ticket-data {
     flex-shrink: 0;
     margin-right: 30px;
 }
 
-.edit-btn {
+.ticket-buttons {
+    display: flex;
     flex-shrink: 0;
+    gap: 20px;
+}
+
+.edit-btn {
     border: 1px solid black;
     border-radius: 50%;
     width: 1.5rem;
     height: 1.5rem;
     background: white;
-    margin-right: 20px;
     cursor: pointer;
 }
 
 .delete-btn {
-    flex-shrink: 0;
     border: 1px solid black;
     border-radius: 50%;
     width: 1.5rem;
@@ -176,13 +184,13 @@ body {
     display: block;
 }
 
-.short-input {
+.field-input-short {
     resize: none;
     width: 100%;
     margin-top: 10px;
 }
 
-.full-input {
+.field-input-full {
     resize: none;
     min-height: 50px;
     width: 100%;
