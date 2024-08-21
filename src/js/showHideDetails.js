@@ -1,16 +1,17 @@
 const tickets = document.querySelector('.tickets-list');
 
 tickets.addEventListener('click', (e) => {
-    const checkButton = e.target.closest('.check-btn');
+    // Проверяем, что клик был по .ticket-item, но не по кнопкам внутри него
+    const ticket = e.target.closest('.ticket-item');
+    const isButtonClick = e.target.closest('.check-btn') || e.target.closest('.edit-btn') || e.target.closest('.delete-btn');
 
-    if (checkButton) {
-        const ticket = checkButton.closest('.ticket-item');
+    if (ticket && !isButtonClick) {
         const fullDescription = ticket.querySelector('.ticket-details');
-        if (checkButton.querySelector('.fa-check')) {
-            checkButton.innerHTML = '';
+        
+        // Переключаем отображение деталей тикета
+        if (fullDescription.style.display === 'block') {
             fullDescription.style.display = 'none';
         } else {
-            checkButton.innerHTML = '<i class="fa-solid fa-check"></i>'; 
             fullDescription.style.display = 'block';
         }
     }
