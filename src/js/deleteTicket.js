@@ -22,7 +22,7 @@ okDelBtn.addEventListener('click', async () => {
     try {
         const id = itemToRemove.dataset.id;
         const response = await fetch(`http://localhost:7070/api?method=deleteById&id=${id}`, {
-            method: 'GET'
+            method: 'DELETE'
         });
 
         itemToRemove.remove();

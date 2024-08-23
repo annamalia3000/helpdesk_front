@@ -25,11 +25,8 @@ tickets.addEventListener('click', async (e) => {
                 body: JSON.stringify({ status: newStatus })
             });
 
-            if (!response.ok) {
-                throw new Error('Ошибка обновления статуса тикета');
-            }
         } catch (error) {
-            console.error('Ошибка при обновлении статуса тикета:', error);
+            console.error(error);
         }
     }
 });
