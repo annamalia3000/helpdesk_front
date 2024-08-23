@@ -1,37 +1,54 @@
-const tickets = document.querySelector('.tickets-list');
-const popupEditTicket = document.querySelector('.popup-edit');
-const popupCancelButton = document.querySelector('.popup-edit-btn-cancel');
-const popupOkButton = document.querySelector('.popup-edit-btn-ok');
-const shortInput = document.querySelector('.short-input-edit');
-const fullInput = document.querySelector('.full-input-edit');
-let itemToChange = null;
+const ticketsContainer = document.querySelector('.tickets-list');
+const popupEdit = document.querySelector('.popup-edit');
+const cancelEditButton = document.querySelector('.popup-edit-btn-cancel');
+const okEditButton = document.querySelector('.popup-edit-btn-ok');
+const nameInput = document.querySelector('.short-input-edit');
+const descriptionInput = document.querySelector('.full-input-edit');
+let ticketToEdit = null;
 
-tickets.addEventListener('click', (e) => {
+ticketsContainer.addEventListener('click', (e) => {
     const editButton = e.target.closest('.edit-btn');
 
     if (editButton) {
-        popupEditTicket.style.display = 'block';
+        popupEdit.style.display = 'block';
 
-        itemToChange = e.target.closest('.ticket-item');
-        const shortInfo = itemToChange.querySelector('.ticket-summary');
-        const fullInfo = itemToChange.querySelector('.ticket-details');
-        shortInput.value = shortInfo.textContent;
-        fullInput.value = fullInfo.textContent;
-
+        ticketToEdit = e.target.closest('.ticket-item');
+        const ticketNameElement = ticketToEdit.querySelector('.ticket-name');
+        const ticketDescriptionElement = ticketToEdit.querySelector('.ticket-description');
+        
+        nameInput.value = ticketNameElement.textContent;
+        descriptionInput.value = ticketDescriptionElement.textContent;
     }
 });
 
-popupOkButton.addEventListener('click', () => {
-    const shortInfo = itemToChange.querySelector('.ticket-summary');
-    const fullInfo = itemToChange.querySelector('.ticket-details');
-        
-    shortInfo.textContent = shortInput.value;
-    fullInfo.textContent = fullInput.value;
-    
-    popupEditTicket.style.display = 'none';
+okEditButton.addEventListener('click', async () => {
+    const updatedName = nameInput.value;
+    const updatedDescription = descriptionInput.value;
+
+    const ticketNameElement = ticketToEdit.querySelector('.ticket-name');
+    const ticketDescriptionElement = ticketToEdit.querySelector('.ticket-description');
+    ticketNameElement.textContent = nameInput.value;
+    ticketDescriptionElement.textContent = descriptionInput.value;
+
+    try {
+        const id = ticketToEdit.dataset.id;
+        const response = await fetch(`http://localhost:7070/api?method=updateById&id=${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: updatedName,
+                description: updatedDescription,
+            })
+        });
+
+        popupEdit.style.display = 'none';
+    } catch (error) {
+        console.error(error); 
+    }
 });
 
-popupCancelButton.addEventListener('click', () => {
-    
-    popupEditTicket.style.display = 'none';
+cancelEditButton.addEventListener('click', () => {
+    popupEdit.style.display = 'none';
 });

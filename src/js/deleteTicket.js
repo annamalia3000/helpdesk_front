@@ -18,9 +18,17 @@ cancelDelBtn.addEventListener('click', () => {
     itemToRemove = null;
 });
 
-okDelBtn.addEventListener('click', () => {
-    itemToRemove .remove();
-    itemToRemove = null;
-    popupDelTicket.style.display = 'none';
+okDelBtn.addEventListener('click', async () => {
+    try {
+        const id = itemToRemove.dataset.id;
+        const response = await fetch(`http://localhost:7070/api?method=deleteById&id=${id}`, {
+            method: 'GET'
+        });
 
+        itemToRemove.remove();
+        itemToRemove = null;
+        popupDelTicket.style.display = 'none';
+    } catch (error) {
+        console.error(error);
+    }
 });
