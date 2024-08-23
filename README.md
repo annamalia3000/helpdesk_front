@@ -1,3 +1,3 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/gn733xq4bn9pjc5o?svg=true)](https://ci.appveyor.com/project/annamalia3000/helpdesk-frontend)
+[![Build status](https://ci.appveyor.com/api/projects/status/djgf5667qu2n0d3h?svg=true)](https://ci.appveyor.com/project/annamalia3000/helpdesk-front)
 
-[HelpDesk](https://annamalia3000.github.io/helpdesk_frontend/)
+[HelpDesk](https://annamalia3000.github.io/helpdesk_front/)
