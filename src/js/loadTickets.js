@@ -3,8 +3,9 @@ import { createTicketElement } from './createTicketElement';
 
 export async function loadTickets() {
     showLoadingIndicator();
+    const baseUrl = 'http://localhost:7070/api';
     try {
-        const response = await fetch('http://localhost:7070/api?method=allTickets');
+        const response = await fetch(`${baseUrl}?method=allTickets`);
         if (!response.ok) throw new Error('Ошибка загрузки тикетов');
         const tickets = await response.json();
         

@@ -5,6 +5,7 @@ const okEditButton = document.querySelector('.popup-edit-btn-ok');
 const nameInput = document.querySelector('.short-input-edit');
 const descriptionInput = document.querySelector('.full-input-edit');
 let ticketToEdit = null;
+const baseUrl = 'http://localhost:7070/api';
 
 ticketsContainer.addEventListener('click', (e) => {
     const editButton = e.target.closest('.edit-btn');
@@ -32,7 +33,7 @@ okEditButton.addEventListener('click', async () => {
 
     try {
         const id = ticketToEdit.dataset.id;
-        const response = await fetch(`http://localhost:7070/api?method=updateById&id=${id}`, {
+        const response = await fetch(`${baseUrl}?method=updateById&id=${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

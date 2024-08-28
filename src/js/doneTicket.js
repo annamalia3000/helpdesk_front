@@ -1,4 +1,5 @@
 const tickets = document.querySelector('.tickets-list');
+const baseUrl = 'http://localhost:7070/api';
 
 tickets.addEventListener('click', async (e) => {
     const checkButton = e.target.closest('.status-btn');
@@ -17,7 +18,7 @@ tickets.addEventListener('click', async (e) => {
         }
 
         try {
-            const response = await fetch(`http://localhost:7070/api?method=updateById&id=${ticketId}`, {
+            const response = await fetch(`${baseUrl}?method=updateById&id=${ticketId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

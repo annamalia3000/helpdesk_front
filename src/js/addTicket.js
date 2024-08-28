@@ -1,4 +1,5 @@
 import { createTicketElement } from './createTicketElement';
+const baseUrl = 'http://localhost:7070/api';
 
 const addButton = document.querySelector('.add-btn');
 const popupAddTicket = document.querySelector('.popup-add');
@@ -17,7 +18,7 @@ okAddButton.addEventListener('click', async () => {
     const fullDescription = fullDescriptionInput.value;
 
     try {
-        const response = await fetch('http://localhost:7070/api?method=createTicket', {
+        const response = await fetch(`${baseUrl}?method=createTicket`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
